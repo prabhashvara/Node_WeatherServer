@@ -9,7 +9,7 @@ weatherForm.addEventListener('submit', (event) => {
     event.preventDefault();
     pError.textContent = 'Loading ...';
     pForecast.textContent = '';
-    fetch('http://localhost:3000/weather?address=' + locationInput.value).then(response => {
+    fetch('/weather?address=' + locationInput.value).then(response => {
         response.json().then(data => {
             if (data.error) {
                 console.log(data.error);
